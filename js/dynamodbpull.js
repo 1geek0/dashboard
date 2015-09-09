@@ -1,3 +1,5 @@
+//Views
+var refresh = document.getElementById('refreshButton');
 //DynamoDB initialization
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
 	IdentityPoolId: 'us-east-1:08e41de7-9cb0-40d6-9f04-6f8956ed25bb'
@@ -11,7 +13,10 @@ var position = 0;
 var resetOrNot = false;
 var beBack = false;
 
-setInterval(reset, 10000);
+refresh.addEventListener('click',reset);
+
+reset();
+
 
 function reset(){
 	if(position<11){
@@ -25,6 +30,7 @@ function reset(){
 			console.log("Reset Mega");
 			updateMegaCount();
 			megaCount = 0;
+			resetOrNot = false;
 		}
 		resetOrNot = false;
 		position = 0;

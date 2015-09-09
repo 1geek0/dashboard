@@ -2,7 +2,8 @@ function initMap() {
 	//Main Map
 	var map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: 20.0000, lng: 73.7800},
-		zoom: 13
+		zoom: 13,
+		'mapTypeId': google.maps.MapTypeId.ROADMAP
 	});
 	//Rokdoba
 	var rokdobaLatLong = {lat:20.00294, lng:73.79324};
@@ -40,4 +41,8 @@ function initMap() {
 	amardhamMarker.addListener('click', function(){
 		amardhamInfoWindow.open(map, amardhamMarker);
 	});
+	//MarkerClustering
+	var markerClustererCollection = [amardhamMarker,rokdobaMarker];
+	var markerClustererOptions = {gridSize: 50, maxZoom: 15};
+	var markerClusterer = new MarkerClusterer(map, markerClustererCollection, markerClustererOptions);
 }
