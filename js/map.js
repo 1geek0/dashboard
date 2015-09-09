@@ -92,6 +92,7 @@ function initMap() {
     var totalCount = 0;
     for(var i=0;i<markerClustererCollection.length;i++){
         totalCount += markerClustererCollection[i].count;
+        console.log("Total Count: ",totalCount);
     }
 	var markerClustererOptions = {gridSize: 50, maxZoom: 15, count: totalCount};
 	var markerClusterer = new MarkerClusterer(map, markerClustererCollection, markerClustererOptions);
