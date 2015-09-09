@@ -4,24 +4,44 @@ AWS.config.credentials = new AWS.CognitoIdentityCredentials({
 });
 AWS.config.region = 'us-east-1';
 var db = new AWS.DynamoDB();
-var getTime = setTimeout(function(){updateMegaCount()}, 4000);
-var regularUpdateCount = setInterval(function(){getLast();}, 5000);
-var regularSetCount = setInterval(function(){updateMegaCount();},6000);
 
 //Utility Variables
 var megaCount = 0; //Int for the megacount
+var position = 0;
+var resetOrNot = false;
+var beBack = false;
+
+reset();
+
+function reset(){
+	if(position<11){
+		console.log("Reset Counter: ", resetOrNot);
+		if(resetOrNot == false){
+	setTimeout(function(){getLast()},3000);
+		}
+		else{
+		console.log("Reached else");
+		if(resetOrNot == true){
+			console.log("Reset Mega");
+			updateMegaCount();
+			megaCount = 0;
+		}
+		resetOrNot = false;
+		position = 0;
+	}
+	} else{
+		position = 0;
+	}
+}
 
 function getLast(){
-	megaCount = 0;
-	var iteratorPosition = 0;
-	for(var i=1;i<10;i++){
         var marams = {
             TableName : 'ashioto2',
             KeyConditionExpression :  "gateID=:gateId",
 			ExpressionAttributeValues :
 			{
 				":gateId":{
-				N: i.toString()
+				N: position.toString()
 			},
 			},
             ScanIndexForward : false,
@@ -32,18 +52,24 @@ function getLast(){
             if(err) console.log(err, err.stack);
             else{
 				try{
-					iteratorPosition+=1;
+					if(position!=0){
+					console.log("Current Position: ", position);
                 	var returnedValue = parseInt(data.Items[0].outcount.N);
 					megaCount += returnedValue;
+					}else{
+						console.log("Position: 0")
+						resetOrNot = true;
+						reset();
+					}
 				} catch(err){
 			if(err.name == 'TypeError'){
 			}
 		}
             }
         });
-	}
+		position++;
+	reset(false);
 }
-getLast();
 function updateMegaCount(){
 	//HTML Views
 	var megaCountTextView = document.getElementById('megaCountText');
