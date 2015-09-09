@@ -20,7 +20,7 @@ reset();
 
 function reset(){
 	if(position<11){
-		console.log("Reset Counter: ", resetOrNot);
+		console.log("Reset Counter: ", position);
 		if(resetOrNot == false){
 	setTimeout(function(){getLast()},500);
 		}
@@ -33,10 +33,10 @@ function reset(){
 			resetOrNot = false;
 		}
 		resetOrNot = false;
-		position = 0;
+		position = -1;
 	}
 	} else{
-		position = 0;
+		position = -1;
 	}
 }
 
@@ -58,9 +58,48 @@ function getLast(){
             if(err) console.log(err, err.stack);
             else{
 				try{
-					if(position!=0){
-					console.log("Current Position: ", position);
+					if(position!=-1){
                 	var returnedValue = parseInt(data.Items[0].outcount.N);
+                    var returnedGateId = parseInt(data.Items[0].gateID.N);
+                    var returnedTimestamp = parseInt(data.Items[0].timestamp.N);
+                    var dateTime = new Date(returnedTimestamp);
+                    
+                        if(returnedGateId == 1){
+                            console.log("Gotcha: ",position);
+                        }
+                        switch(returnedGateId){
+                            case 1:
+                                gate1 = returnedValue;
+                                break;
+                            case 2:
+                                gate2 = returnedValue;
+                                break;
+                            case 3:
+                                gate3 = returnedValue;
+                                break;
+                            case 4:
+                                gate1 = returnedValue;
+                                break;
+                            case 5:
+                                gate1 = returnedValue;
+                                break;
+                            case 6:
+                                gate6 = returnedValue;
+                                break;
+                            case 7:
+                                gate7 = returnedValue;
+                                console.log("Gate 7: ",gate7);
+                                break;
+                            case 8:
+                                gate8 = returnedValue;
+                                break;
+                            case 9:
+                                gate9 = returnedValue;
+                                break;
+                            case 10:
+                                gate10 = returnedValue;
+                                break;
+                        }
 					megaCount += returnedValue;
 					}else{
 						console.log("Position: 0")
@@ -80,4 +119,5 @@ function updateMegaCount(){
 	//HTML Views
 	var megaCountTextView = document.getElementById('megaCountText');
 	megaCountTextView.innerHTML = megaCount;
+    initMap();
 }

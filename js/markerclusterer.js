@@ -5,8 +5,8 @@
 
 /**
  * @name MarkerClusterer for Google Maps v3
- * @version version 1.0
- * @author Luke Mahe
+ * @version version 1.1
+ * @author Nilay Kulkarni
  * @fileoverview
  * The library creates and manages per-zoom-level clusters for large amounts of
  * markers.
@@ -38,6 +38,7 @@
  * @param {Array.<google.maps.Marker>=} opt_markers Optional markers to add to
  *   the cluster.
  * @param {Object=} opt_options support the following options:
+ *	   'count': (number)
  *     'gridSize': (number) The grid size of a cluster in pixels.
  *     'maxZoom': (number) The maximum zoom level that a marker can be part of a
  *                cluster.
@@ -59,6 +60,7 @@
  * @constructor
  * @extends google.maps.OverlayView
  */
+var count_;
 function MarkerClusterer(map, opt_markers, opt_options) {
   // MarkerClusterer implements google.maps.OverlayView interface. We use the
   // extend function to extend MarkerClusterer with google.maps.OverlayView
@@ -66,6 +68,11 @@ function MarkerClusterer(map, opt_markers, opt_options) {
   // look for it at the last possible moment. If it doesn't exist now then
   // there is no point going ahead :)
   this.extend(MarkerClusterer, google.maps.OverlayView);
+	
+	//Ashioto Customization
+	count_ = opt_options['count'];
+    console.log("COUNT: ",count_);
+	
   this.map_ = map;
 
   /**
@@ -1064,7 +1071,7 @@ ClusterIcon.prototype.onAdd = function() {
   if (this.visible_) {
     var pos = this.getPosFromLatLng_(this.center_);
     this.div_.style.cssText = this.createCss(pos);
-    this.div_.innerHTML = this.sums_.text;
+    this.div_.innerHTML = count_;
   }
 
   var panes = this.getPanes();
