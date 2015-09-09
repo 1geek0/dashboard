@@ -11,7 +11,7 @@ var position = 0;
 var resetOrNot = false;
 var beBack = false;
 
-reset();
+setInterval(reset, 10000);
 
 function reset(){
 	if(position<11){
