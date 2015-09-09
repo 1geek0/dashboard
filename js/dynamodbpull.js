@@ -17,7 +17,7 @@ function reset(){
 	if(position<11){
 		console.log("Reset Counter: ", resetOrNot);
 		if(resetOrNot == false){
-	setTimeout(function(){getLast()},3000);
+	setTimeout(function(){getLast()},500);
 		}
 		else{
 		console.log("Reached else");
