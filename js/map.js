@@ -1,14 +1,4 @@
 //Gate Counts
-var gate1 = 0;
-var gate2 = 0;
-var gate3 = 0;
-var gate4 = 0;
-var gate5 = 0;
-var gate6 = 0;
-var gate7 = 0;
-var gate8 = 0;
-var gate9 = 0;
-var gate10 = 0;
 var gate1IsOpened = false;
 var gate2IsOpened = false;
 var gate3IsOpened = false;
@@ -45,12 +35,12 @@ function initMap() {
 		animation: google.maps.Animation.DROP,
 		title : rokdobaTitle,
 		map : map,
-        count : gate2
+        count : gate1
 	});
 	
 	var rokdobaInfoWindow = new google.maps.InfoWindow({
 		content :   '<span id="totalCountTitle" class="card-title" style="pointer-events: auto; margin-left: 0px; margin-top: 0px; text-align: center; text-decoration: none; font-weight: 500; font-size: 38px;text-color:">Rokdoba Exit Gate</span>'+
-                    '<h1 id="megaCountText" style="font-size: 30px;text-align: center;">'+gate8+'</h1>'
+                    '<h1 id="megaCountText" style="font-size: 30px;text-align: center;">'+gate1+'</h1>'
 	});
 	
 	rokdobaMarker.addListener('click', function(){
@@ -71,7 +61,7 @@ function initMap() {
 		animation: google.maps.Animation.DROP,
 		title : amardhamTitle,
 		map : map,
-        count : gate1
+        count : gate2
 	});
 	
 	var amardhamInfoWindow = new google.maps.InfoWindow({
@@ -87,12 +77,21 @@ function initMap() {
             gate2IsOpened = true;
         }
 	});
+    //Home
+    var homeLatLong = {lat:gate8Lat,lng:gate8Long};
+    var homeMarker = new google.maps.Marker({
+        position : homeLatLong,
+        animation : google.maps.Animation.DROP,
+        title : "Nilay Home",
+        map : map,
+        count : gate8
+    });
 	//MarkerClustering
-	var markerClustererCollection = [amardhamMarker,rokdobaMarker];
+	var markerClustererCollection = [amardhamMarker,rokdobaMarker,homeMarker];
     var totalCount = 0;
     for(var i=0;i<markerClustererCollection.length;i++){
         totalCount += markerClustererCollection[i].count;
-        console.log("Total Count: ",totalCount);
+        console.log("Total Count: ",markerClustererCollection[i]);
     }
 	var markerClustererOptions = {gridSize: 50, maxZoom: 15, count: totalCount};
 	var markerClusterer = new MarkerClusterer(map, markerClustererCollection, markerClustererOptions);

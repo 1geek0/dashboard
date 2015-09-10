@@ -360,15 +360,18 @@ MarkerClusterer.prototype.getMaxZoom = function() {
  *  @private
  */
 MarkerClusterer.prototype.calculator_ = function(markers, numStyles) {
-  var index = 0;
-  var count = markers.length;
-  var dv = count;
-  while (dv !== 0) {
-    dv = parseInt(dv / 10, 10);
-    index++;
-  }
-
-  index = Math.min(index, numStyles);
+  var index = 1;
+  var count = 0;
+    for(var i=0;i<markers.length;i++){
+        count += markers[i].count;
+    }
+    if(count > 30000){
+        if(count > 60000){
+            index = 3;
+        }else{
+        index = 2;
+        }
+    }
   return {
     text: count,
     index: index
@@ -1071,7 +1074,8 @@ ClusterIcon.prototype.onAdd = function() {
   if (this.visible_) {
     var pos = this.getPosFromLatLng_(this.center_);
     this.div_.style.cssText = this.createCss(pos);
-    this.div_.innerHTML = count_;
+    this.div_.innerHTML = this.sums_.text;
+      console.log("SUMS INDEX: ",this.sums_.index);
   }
 
   var panes = this.getPanes();
