@@ -2,26 +2,29 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <title>Ashioto Dashboard</title>
-	<link rel="shortcut icon" href="ashioto.ico">
+    <link rel="shortcut icon" href="ashioto.ico">
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
-	<style type="text/css">
+    <style type="text/css">
     </style>
-	<!-- JS -->
-	<script type="text/javascript" src="js/aws-sdk-2.1.50.min.js"></script>
-	<script type="text/javascript" src="js/markerclusterer.js"></script>
+    <!-- JS -->
+    <script type="text/javascript" src="js/aws-sdk-2.1.50.min.js"></script>
+    <script type="text/javascript" src="js/markerclusterer.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps/api/js/QuotaService.RecordEvent?1sfile%3A%2F%2F%2Fhome%2Fgeek%2Fdashboard%2Findex.html&amp;3sAIzaSyCrtfOkVRk9XCeU78C0YcGF2TS69MXLrhI&amp;5e0&amp;6u1&amp;7sdq9xhm&amp;callback=_xdc_._m2kvvc&amp;token=118737"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps/api/js/QuotaService.RecordEvent?1sfile%3A%2F%2F%2Fhome%2Fgeek%2Fdashboard%2Findex.html&amp;3sAIzaSyCrtfOkVRk9XCeU78C0YcGF2TS69MXLrhI&amp;5e0&amp;6u1&amp;7sdq9xhn&amp;callback=_xdc_._m2kvvd&amp;token=53836"></script>
 </head>
 
 <body>
     <nav>
         <div class="nav-wrapper teal">
             <a id="logo" href="#" class="brand-logo center">Ashioto</a>
-			<ul id="nav-mobile" class="left hide-on-med-and-down">
-				<li><a href="old.html">Old Graph</a></li>
-			</ul>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="old.html" style="font-weight: 400;font-size: 40px;" target="_blank">Old Graph</a></li>
+                <li><a href="#map"><i id="refreshButton" class="large material-icons noIbar">loop</i></a></li>
+            </ul>
         </div>
     </nav>
     <div class="row">
@@ -29,23 +32,22 @@
             <div class="card teal z-depth-3">
                 <div class="card-content white-text center">
                     <span id="totalCountTitle" class="card-title" style="pointer-events: auto; margin-left: 0px; margin-top: 0px; text-align: center; text-decoration: none; font-weight: 500; font-size: 38px;">Total Count</span>
-					<b id="refreshButton" class="material-icons">loop</b>
                     <h1 id="megaCountText" style="height: 72px; margin-left: -17px; margin-top: 29px; pointer-events: auto;">Loading</h1>
                 </div>
             </div>
         </div>
         <div class="col s12 m6">
-        <div class="card teal z-depth-3">
-            <div class="card-content white-text center">
-				<span id="busiestGateTitle" class="card-title center" style="pointer-events: auto; margin-left: 0px; margin-top: 0px; text-align: center; text-decoration: none; font-weight: 500; font-size: 38px;">Busiest Gate</span>
-                <h1 id="busiestCountText" style="height: 72px; margin-left: -17px; margin-top: 29px; pointer-events: auto;">Loading</h1>
-				</div>
-			</div>
+            <div class="card teal z-depth-3">
+                <div class="card-content white-text center">
+                    <span id="busiestGateTitle" class="card-title center" style="pointer-events: auto; margin-left: 0px; margin-top: 0px; text-align: center; text-decoration: none; font-weight: 500; font-size: 38px;">Busiest Gate</span>
+                    <h1 id="busiestCountText" style="height: 72px; margin-left: -17px; margin-top: 29px; pointer-events: auto;">Loading</h1>
+                </div>
             </div>
+        </div>
     </div>
-	<script type="text/javascript" src="js/dynamodbpull.js"></script>
-	<div id="map"></div>
-				<script type="text/javascript" src="js/map.js"></script>
+    <script type="text/javascript" src="js/dynamodbpull.js"></script>
+    <div id="map"></div>
+    <script type="text/javascript" src="js/map.js"></script>
 
     <footer class="page-footer teal">
 
@@ -56,7 +58,7 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrtfOkVRk9XCeU78C0YcGF2TS69MXLrhI&callback=initMap">
+    <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrtfOkVRk9XCeU78C0YcGF2TS69MXLrhI&amp;callback=initMap">
     </script>
     <style type="text/css">
     </style>

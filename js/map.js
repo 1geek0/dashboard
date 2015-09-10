@@ -1,13 +1,13 @@
 //Gate Counts
-var gate1IsOpened = false;
-var gate2IsOpened = false;
-var gate3IsOpened = false;
-var gate4IsOpened = false;
-var gate6IsOpened = false;
-var gate7IsOpened = false;
-var gate8IsOpened = false;
-var gate9IsOpened = false;
-var gate10IsOpened = false;
+var gate1IsOpened = true;
+var gate2IsOpened = true;
+var gate3IsOpened = true;
+var gate4IsOpened = true;
+var gate6IsOpened = true;
+var gate7IsOpened = true;
+var gate8IsOpened = true;
+var gate9IsOpened = true;
+var gate10IsOpened = true;
 var gate1Stamp = "";
 var gate2Stamp = "";
 var gate3Stamp = "";
@@ -23,7 +23,7 @@ function initMap() {
 	//Main Map
 	var map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: 20.0000, lng: 73.7800},
-		zoom: 13,
+		zoom: 12,
 		'mapTypeId': google.maps.MapTypeId.ROADMAP
 	});
 	//Rokdoba
@@ -46,6 +46,12 @@ function initMap() {
 	rokdobaMarker.addListener('click', function(){
         if(gate1IsOpened == true){
 		rokdobaInfoWindow.open(map, rokdobaMarker);
+            if(gate2IsOpened == false){
+                amardhamInfoWindow.close();
+            } else if(gate8IsOpened == false){
+                console.log("Hey There!");
+                homeInfoWindow.close();
+            }
             gate1IsOpened = false;
         } else if(gate1IsOpened == false){
             rokdobaInfoWindow.close();
@@ -65,12 +71,18 @@ function initMap() {
 	});
 	
 	var amardhamInfoWindow = new google.maps.InfoWindow({
-		content : amardhamTitle
+		content : '<span id="totalCountTitle" class="card-title" style="pointer-events: auto; margin-left: 0px; margin-top: 0px; text-align: center; text-decoration: none; font-weight: 500; font-size: 38px;text-color:">Amardham Exit Gate</span>'+
+                    '<h1 id="megaCountText" style="font-size: 30px;text-align: center;">'+gate2+'</h1>'
 		});
 	
 	amardhamMarker.addListener('click', function(){
-        if(gate2isOpened == true){
+        if(gate2IsOpened == true){
 		amardhamInfoWindow.open(map, amardhamMarker);
+            if(gate1IsOpened == false){
+                rokdobaInfoWindow.close();
+            } else if(gate8IsOpened == false){
+                homeInfoWindow.close();
+            }
             gate2IsOpened = false;
         } else if(gate2IsOpened == false){
             amardhamInfoWindow.close();
@@ -86,12 +98,30 @@ function initMap() {
         map : map,
         count : gate8
     });
+    var homeInfoWindow = new google.maps.InfoWindow({
+		content : '<span id="totalCountTitle" class="card-title" style="pointer-events: auto; margin-left: 0px; margin-top: 0px; text-align: center; text-decoration: none; font-weight: 500; font-size: 38px;text-color:">Nilay Home</span>'+
+                    '<h1 id="megaCountText" style="font-size: 30px;text-align: center;">'+gate8+'</h1>'
+		});
+	
+	homeMarker.addListener('click', function(){
+        if(gate8IsOpened == true){
+		homeInfoWindow.open(map, homeMarker);
+            if(gate2IsOpened == false){
+                amardhamInfoWindow.close();
+            } else if(gate1IsOpened == false){
+                rokdobaInfoWindow.close();
+            }
+            gate8IsOpened = false;
+        } else if(gate8IsOpened == false){
+            homeInfoWindow.close();
+            gate8IsOpened = true;
+        }
+	});
 	//MarkerClustering
 	var markerClustererCollection = [amardhamMarker,rokdobaMarker,homeMarker];
     var totalCount = 0;
     for(var i=0;i<markerClustererCollection.length;i++){
         totalCount += markerClustererCollection[i].count;
-        console.log("Total Count: ",markerClustererCollection[i]);
     }
 	var markerClustererOptions = {gridSize: 50, maxZoom: 15, count: totalCount};
 	var markerClusterer = new MarkerClusterer(map, markerClustererCollection, markerClustererOptions);

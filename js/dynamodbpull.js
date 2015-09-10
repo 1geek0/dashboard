@@ -46,6 +46,7 @@ var megaCount = 0; //Int for the megacount
 var position = 0;
 var resetOrNot = false;
 var beBack = false;
+var upVotes = [];
 
 refresh.addEventListener('click',reset);
 
@@ -54,14 +55,12 @@ reset();
 
 function reset(){
 	if(position<11){
-		console.log("Reset Counter: ", position);
 		if(resetOrNot == false){
 	setTimeout(function(){getLast()},500);
 		}
 		else{
 		console.log("Reached else");
 		if(resetOrNot == true){
-			console.log("Reset Mega");
 			updateMegaCount();
 			megaCount = 0;
 			resetOrNot = false;
@@ -99,10 +98,7 @@ function getLast(){
                     var returnedLatitude = parseFloat(data.Items[0].latitude.N);
                     var returnedLongitude = parseFloat(data.Items[0].longitude.N);
                     var dateTime = new Date(returnedTimestamp);
-                    
-                        if(returnedGateId == 1){
-                            console.log("Gotcha: ",position);
-                        }
+                        
                         switch(returnedGateId){
                             case 1:
                                 gate1 = returnedValue;
@@ -168,7 +164,6 @@ function getLast(){
                         }
 					megaCount += returnedValue;
 					}else{
-						console.log("Position: 0")
 						resetOrNot = true;
 						reset();
 					}
@@ -180,14 +175,17 @@ function getLast(){
         });
 		position++;
 	reset(false);
-    
+}
 function updateMegaCount(){
     var busiestId;
     var busiestCount;
-    mymax(gates);
-    busiestId = gates[i].id;
-    busiestCount = gates[i].count;
-    }
+    var sortByCount = gates.slice(0);
+    sortByCount.sort(function(a,b){
+        return a.count - b.count;
+    }).reverse();
+    busiestId = sortByCount[0].id;
+    busiestCount = sortByCount[0].count;
+    console.log("By Count: ", sortByCount);
 	//HTML Views
 	var megaCountTextView = document.getElementById('megaCountText');
 	megaCountTextView.innerHTML = megaCount;
