@@ -22,8 +22,10 @@
         <div class="nav-wrapper container">
             <a id="logo" href="#" class="brand-logo center">Ashioto</a>
             <ul id="nav-mobile">
-                <li><a href="old.html" style="font-weight: 400;font-size: 40px;" target="_blank">Old Graph</a></li>
-                <li><a href="#map"><i id="refreshButton" class="large material-icons noIbar">loop</i></a></li>
+                <li><a href="old.html" style="font-weight: 400;font-size: 40px;" target="_blank">Old Graph</a>
+                </li>
+                <li><a href="#map"><i id="refreshButton" class="large material-icons noIbar">loop</i></a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -46,16 +48,54 @@
         </div>
     </div>
     <div class="row">
-        <div id="map" class="col s12 m6"></div>
-        <div class="col s12 m6">
-            <div class="card teal z-depth-3">
+        <div class="col s2 m2">
+            <div id="rokdobaCard" class="card teal z-depth-3">
                 <div class="card-content white-text center">
-                    <span id="perGateTitle" class="card-title center" style="pointer-events: auto; margin-left: 0px; margin-top: 0px; text-align: center; text-decoration: none; font-weight: 500; font-size: 38px;">Choose Gate: <i class="material-icons"></i></span>
-                    <h1 id="busiestCountText" style="height: 72px; margin-left: -17px; margin-top: 29px; pointer-events: auto;">Loading</h1>
+                    <span id="rokdobaGateTitle" class="card-title center" style="pointer-events: auto; margin-left: 0px; margin-top: 0px; text-align: center; text-decoration: none; font-weight: 500; font-size: 30px;">Rokdoba: <i class="material-icons"></i></span>
+                    <h1 id="busiestCountText">1241</h1>
+                </div>
+            </div>
+        </div>
+        <div class="card teal z-depth-3 col s3 m2" id="amardhamGateCard">
+            <div class="card-content white-text center">
+                <span id="rokdobaGateTitle" class="card-title center" style="pointer-events: auto; margin-left: 0px; margin-top: 0px; text-align: center; text-decoration: none; font-weight: 500; font-size: 30px;">Amardham: <i class="material-icons"></i></span>
+                <h1 id="busiestCountText">2528</h1>
+            </div>
+        </div>
+        <div class="col s2 m2">
+            <div id="rokdobaCard" class="card teal z-depth-3">
+                <div class="card-content white-text center">
+                    <span id="rokdobaGateTitle" class="card-title center">Kothawde: <i class="material-icons"></i></span>
+                    <h1 id="busiestCountText">3263</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col s2 m2">
+            <div id="rokdobaCard" class="card teal z-depth-3">
+                <div class="card-content white-text center">
+                    <span id="rokdobaGateTitle" class="card-title center">Laxminarayan Ghat: <i class="material-icons"></i></span>
+                    <h1 id="busiestCountText">5125</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col s2 m2">
+            <div id="rokdobaCard" class="card teal z-depth-3">
+                <div class="card-content white-text center">
+                    <span id="rokdobaGateTitle" class="card-title center">Gharpure Ghat: <i class="material-icons"></i></span>
+                    <h1 id="busiestCountText">6211</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col s2 m2">
+            <div id="rokdobaCard" class="card teal z-depth-3">
+                <div class="card-content white-text center">
+                    <span id="rokdobaGateTitle" class="card-title center">Panchavati Karanja: <i class="material-icons"></i></span>
+                    <h1 id="busiestCountText">1824</h1>
                 </div>
             </div>
         </div>
     </div>
+    <div id="map" class="col s12 m6"></div>
     <script type="text/javascript" src="js/dynamodbpull.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
 
