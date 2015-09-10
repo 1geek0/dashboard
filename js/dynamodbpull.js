@@ -180,25 +180,7 @@ function getLast(){
         });
 		position++;
 	reset(false);
-    function mymax(a)
-{
-    var m = -Infinity, i = 0, n = a.length;
-
-    for (; i != n; ++i) {
-        if (a[i] > m) {
-            m = a[i];
-      
-      
-      
-    for (; i != n; ++i) {
-        if (a[i] > m) {
-            m = a
-            
-    }
-
-    return m;
-}
-}
+    
 function updateMegaCount(){
     var busiestId;
     var busiestCount;
