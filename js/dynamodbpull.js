@@ -34,6 +34,15 @@ var gate9Long = 0.0;
 var gate10Long = 0.0;
 //Views
 var refresh = document.getElementById('refreshButton');
+
+//Count cards
+var countRokdoba = document.getElementById('countRokdoba');
+var countAmardham = document.getElementById('countAmardham');
+var countKothawde = document.getElementById('countKothawde');
+var countLaxmi = document.getElementById('countLaxmi');
+var countGharpure = document.getElementById('countGharpure');
+var countPanchavati = document.getElementById('countPanchavati');
+
 //DynamoDB initialization
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
 	IdentityPoolId: 'us-east-1:08e41de7-9cb0-40d6-9f04-6f8956ed25bb'
@@ -101,36 +110,43 @@ function getLast(){
                         
                         switch(returnedGateId){
                             case 1:
+                                countRokdoba.innerHTML = returnedValue;
                                 gate1 = returnedValue;
                                 gates.push({id : "1", count : gate1});
                                 gate1Lat = returnedLatitude;
                                 gate1Long = returnedLongitude;
                                 break;
                             case 2:
+                                countAmardham.innerHTML = returnedValue;
                                 gate2 = returnedValue;
                                 gates.push({id : "2", count : gate2});
                                 gate2Lat = returnedLatitude;
                                 gate2Long = returnedLongitude;
                                 break;
                             case 3:
+                                console.log('Gate 3: ',returnedValue);
+                                countKothawde.innerHTML = returnedValue;
                                 gate3 = returnedValue;
                                 gates.push({id : "3", count : gate3});
                                 gate3Lat = returnedLatitude;
                                 gate3Long = returnedLongitude;
                                 break;
                             case 4:
+                                countLaxmi.innerHTML = returnedValue;
                                 gate4 = returnedValue;
                                 gates.push({id : "4", count : gate4});
                                 gate4Lat = returnedLatitude;
                                 gate4Long = returnedLongitude;
                                 break;
                             case 5:
+                                countGharpure.innerHTML = returnedValue;
                                 gate5 = returnedValue;
                                 gates.push({id : "5", count : gate5});
                                 gate5Lat = returnedLatitude;
                                 gate5Long = returnedLongitude;
                                 break;
                             case 6:
+                                countPanchavati.innerHTML = returnedValue;
                                 gate6 = returnedValue;
                                 gates.push({id : "6", count : gate6});
                                 gate6Lat = returnedLatitude;
