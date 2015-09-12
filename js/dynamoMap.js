@@ -49,6 +49,7 @@ var upVotes = [];
 
 setInterval(function(){reset();},60000);
 
+reset();
 
 function reset(){
 	if(position<11){
