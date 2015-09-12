@@ -59,6 +59,8 @@ var upVotes = [];
 
 refresh.addEventListener('click',reset);
 
+setInterval(reset,40000);
+
 reset();
 
 
