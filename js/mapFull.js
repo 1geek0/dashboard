@@ -23,7 +23,7 @@ function initMap() {
 	//Main Map
 	var map = new google.maps.Map(document.getElementById('mapFull'), {
 		center: {lat: 20.0000, lng: 73.7800},
-		zoom: 12,
+		zoom: 15,
 		'mapTypeId': google.maps.MapTypeId.ROADMAP
 	});
 	//Rokdoba
@@ -39,28 +39,23 @@ function initMap() {
 	});
 	
 	var rokdobaInfoWindow = new google.maps.InfoWindow({
-		content :   '<span id="totalCountTitle" class="card-title" style="pointer-events: auto; margin-left: 0px; margin-top: 0px; text-align: center; text-decoration: none; font-weight: 500; font-size: 38px;text-color:">Rokdoba Exit Gate</span>'+
-                    '<h1 id="megaCountText" style="font-size: 30px;text-align: center;">'+gate1+'</h1>'
+		content :   '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Rokdoba</h5>'+
+                    '<h6 id="megaCountText" style="text-align: center; font-size="30px">'+gate1+'</h6>'
 	});
+    
+    rokdobaInfoWindow.open(map, rokdobaMarker);
 	
 	rokdobaMarker.addListener('click', function(){
         if(gate1IsOpened == true){
-		rokdobaInfoWindow.open(map, rokdobaMarker);
-            if(gate2IsOpened == false){
-                amardhamInfoWindow.close();
-            } else if(gate8IsOpened == false){
-                console.log("Hey There!");
-                homeInfoWindow.close();
-            }
-            gate1IsOpened = false;
-        } else if(gate1IsOpened == false){
+            rokdobaInfoWindow.open(map, rokdobaMarker);
+            gate1IsOpened = false
+        } else{
             rokdobaInfoWindow.close();
-            gate1IsOpened = true;
         }
 	});
 	//Amardham
 	var amardhamLatLong = {lat:19.99866, lng:73.79690};
-	var amardhamTitle = "Amardham";
+	var amardhamTitle = "Amardham Exit";
 	
 	var amardhamMarker = new google.maps.Marker({
 		position : amardhamLatLong,
@@ -71,18 +66,14 @@ function initMap() {
 	});
 	
 	var amardhamInfoWindow = new google.maps.InfoWindow({
-		content : '<span id="totalCountTitle" class="card-title" style="pointer-events: auto; margin-left: 0px; margin-top: 0px; text-align: center; text-decoration: none; font-weight: 500; font-size: 38px;text-color:">Amardham Exit Gate</span>'+
-                    '<h1 id="megaCountText" style="font-size: 30px;text-align: center;">'+gate2+'</h1>'
+		content : '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Amardham</h5>'+
+                    '<h6 id="megaCountText" style="text-align: center; font-size="30px">'+gate2+'</h6>'
 		});
-	
+    
+	amardhamInfoWindow.open(map, amardhamMarker);
 	amardhamMarker.addListener('click', function(){
         if(gate2IsOpened == true){
 		amardhamInfoWindow.open(map, amardhamMarker);
-            if(gate1IsOpened == false){
-                rokdobaInfoWindow.close();
-            } else if(gate8IsOpened == false){
-                homeInfoWindow.close();
-            }
             gate2IsOpened = false;
         } else if(gate2IsOpened == false){
             amardhamInfoWindow.close();
@@ -90,18 +81,32 @@ function initMap() {
         }
 	});
     //Kothawde
-    var kothawdeLatLong = {lat:19.992728,lng:73.805187};
+    var kothawdeLatLong = {lat:19.992728, lng:73.805187};
     var kothawdeTitle = "Kothawde Trading";
     
     var kothawdeMarker = new google.maps.Marker({
         position : kothawdeLatLong,
         animation: google.maps.Animation.DROP,
-		title : kothawdeTitle,
+		title : gate3,
 		map : map,
         count : gate3
     });
+    var kothawdeInfoWindow = new google.maps.InfoWindow({
+        content : '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Kothawde</h5>'+
+                    '<h6 id="megaCountText" style="text-align: center; font-size="30px">'+gate3+'</h6>'
+    });
+    kothawdeInfoWindow.open(map,kothawdeMarker);
+    kothawdeMarker.addListener('click', function(){
+        if(gate3IsOpened == true){
+		kothawdeInfoWindow.open(map, kothawdeMarker);
+            gate3IsOpened = false;
+        } else if(gate3IsOpened == false){
+            kothawdeInfoWindow.close();
+            gate3IsOpened = true;
+        }
+	});
     //Laxmi Ghat
-    var laxmiLatLong = {lat:20.001449,lng:73.811142};
+    var laxmiLatLong = {lat:20.001449, lng:73.811142};
     var laxmiTitle = "Laxmi Ghat";
     
     var laxmiMarker = new google.maps.Marker({
@@ -111,9 +116,22 @@ function initMap() {
         map : map,
         animation : google.maps.Animation.DROP
     });
-    
+    var laxmiInfoWindow = new google.maps.InfoWindow({
+        content : '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Laxmi Ghat</h5>'+
+                    '<h6 id="megaCountText" style="text-align: center; font-size="30px">'+gate4+'</h6>'
+    });
+    laxmiInfoWindow.open(map, laxmiMarker);
+    laxmiMarker.addListener('click', function(){
+        if(gate4IsOpened == true){
+		laxmiInfoWindow.open(map, laxmiMarker);
+            gate4IsOpened = false;
+        } else if(gate4IsOpened == false){
+            laxmiInfoWindow.close();
+            gate4IsOpened = true;
+        }
+	});
     //Gharpure Ghat
-    var gharpureLatLong = {lat:20.008742,lng:73.7838397};
+    var gharpureLatLong = {lat:20.008742, lng:73.7838397};
     var gharpureTitle = "Gharpure Ghat";
     
     var gharpureMarker = new google.maps.Marker({
@@ -124,17 +142,47 @@ function initMap() {
         animation : google.maps.Animation.DROP
     });
     
+    var gharpureInfoWindow = new google.maps.InfoWindow({
+        content : '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Gharpure</h5>'+
+                    '<h6 id="megaCountText" style="text-align: center; font-size="30px">'+gate5+'</h6>'
+    });
+    gharpureInfoWindow.open(map, gharpureMarker);
+    gharpureMarker.addListener('click', function(){
+        if(gate5IsOpened == true){
+		gharpureInfoWindow.open(map, gharpureMarker);
+            gate5IsOpened = false;
+        } else if(gate5IsOpened == false){
+            gharpureInfoWindow.close();
+            gate5IsOpened = true;
+        }
+	});
+    
     //Saraf Bazar
-    var sarafLatLong = {lat:20.0049516,lng:73.791175};
+    var sarafLatLong = {lat:20.00655661, lng:73.79083704};
     var sarafTitle = "Saraf Bazar";
     
     var sarafMarker = new google.maps.Marker({
-        positon : sarafLatLong,
+        position : sarafLatLong,
         title : sarafTitle,
         count : gate6,
         map : map,
         animation : google.maps.Animation.DROP
     });
+    
+    var sarafInfoWindow = new google.maps.InfoWindow({
+        content : '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Saraf Bazar</h5>'+
+                    '<h6 id="megaCountText" style="text-align: center; font-size="30px">'+gate6+'</h6>'
+    });
+    sarafInfoWindow.open(map, sarafMarker);
+    sarafMarker.addListener('click', function(){
+        if(gate6IsOpened == true){
+		sarafInfoWindow.open(map, sarafMarker);
+            gate6IsOpened = false;
+        } else if(gate6IsOpened == false){
+            sarafInfoWindow.close();
+            gate6IsOpened = true;
+        }
+	});
     
 	//MarkerClustering
 	var markerClustererCollection = [amardhamMarker,rokdobaMarker,kothawdeMarker,laxmiMarker,gharpureMarker,sarafMarker];
@@ -142,6 +190,6 @@ function initMap() {
     for(var i=0;i<markerClustererCollection.length;i++){
         totalCount += markerClustererCollection[i].count;
     }
-	var markerClustererOptions = {gridSize: 50, maxZoom: 15, count: totalCount};
+	var markerClustererOptions = {gridSize: 50, maxZoom: 13, count: totalCount};
 	var markerClusterer = new MarkerClusterer(map, markerClustererCollection, markerClustererOptions);
 }

@@ -3,6 +3,7 @@ var gate1IsOpened = true;
 var gate2IsOpened = true;
 var gate3IsOpened = true;
 var gate4IsOpened = true;
+var gate5IsOpened = true;
 var gate6IsOpened = true;
 var gate7IsOpened = true;
 var gate8IsOpened = true;
@@ -22,13 +23,13 @@ var gate10Stamp = "";
 function initMap() {
 	//Main Map
 	var map = new google.maps.Map(document.getElementById('map'), {
-		center: {lat: 20.0000, lng: 73.7800},
-		zoom: 12,
+		center: {lat: 20.008011, lng: 73.792308},
+		zoom: 14,
 		'mapTypeId': google.maps.MapTypeId.ROADMAP
 	});
 	//Rokdoba
 	var rokdobaLatLong = {lat:20.00294, lng:73.79324};
-	var rokdobaTitle = "Rokdoba Exit";
+	var rokdobaTitle = "Rokdoba";
 	
 	var rokdobaMarker = new google.maps.Marker({
 		position : rokdobaLatLong,
@@ -42,20 +43,15 @@ function initMap() {
 		content :   '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Rokdoba</h5>'+
                     '<h6 id="megaCountText" style="text-align: center; font-size="30px">'+gate1+'</h6>'
 	});
+    
+    rokdobaInfoWindow.open(map, rokdobaMarker);
 	
 	rokdobaMarker.addListener('click', function(){
         if(gate1IsOpened == true){
-		rokdobaInfoWindow.open(map, rokdobaMarker);
-            if(gate2IsOpened == false){
-                amardhamInfoWindow.close();
-            } else if(gate8IsOpened == false){
-                console.log("Hey There!");
-                homeInfoWindow.close();
-            }
-            gate1IsOpened = false;
-        } else if(gate1IsOpened == false){
+            rokdobaInfoWindow.open(map, rokdobaMarker);
+            gate1IsOpened = false
+        } else{
             rokdobaInfoWindow.close();
-            gate1IsOpened = true;
         }
 	});
 	//Amardham
@@ -71,18 +67,14 @@ function initMap() {
 	});
 	
 	var amardhamInfoWindow = new google.maps.InfoWindow({
-		content : '<span class="card-title">Amardham Exit Gate</span>'+
-                    '<h1 id="megaCountText" style="font-size: 30px;text-align: center;">'+gate2+'</h1>'
+		content : '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Amardham</h5>'+
+                    '<h6 id="megaCountText" style="text-align: center; font-size="30px">'+gate2+'</h6>'
 		});
-	
+    
+	amardhamInfoWindow.open(map, amardhamMarker);
 	amardhamMarker.addListener('click', function(){
         if(gate2IsOpened == true){
 		amardhamInfoWindow.open(map, amardhamMarker);
-            if(gate1IsOpened == false){
-                rokdobaInfoWindow.close();
-            } else if(gate8IsOpened == false){
-                homeInfoWindow.close();
-            }
             gate2IsOpened = false;
         } else if(gate2IsOpened == false){
             amardhamInfoWindow.close();
@@ -100,6 +92,20 @@ function initMap() {
 		map : map,
         count : gate3
     });
+    var kothawdeInfoWindow = new google.maps.InfoWindow({
+        content : '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Kothawde</h5>'+
+                    '<h6 id="megaCountText" style="text-align: center; font-size="30px">'+gate3+'</h6>'
+    });
+    kothawdeInfoWindow.open(map,kothawdeMarker);
+    kothawdeMarker.addListener('click', function(){
+        if(gate3IsOpened == true){
+		kothawdeInfoWindow.open(map, kothawdeMarker);
+            gate3IsOpened = false;
+        } else if(gate3IsOpened == false){
+            kothawdeInfoWindow.close();
+            gate3IsOpened = true;
+        }
+	});
     //Laxmi Ghat
     var laxmiLatLong = {lat:20.001449, lng:73.811142};
     var laxmiTitle = "Laxmi Ghat";
@@ -111,7 +117,20 @@ function initMap() {
         map : map,
         animation : google.maps.Animation.DROP
     });
-    
+    var laxmiInfoWindow = new google.maps.InfoWindow({
+        content : '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Laxmi Ghat</h5>'+
+                    '<h6 id="megaCountText" style="text-align: center; font-size="30px">'+gate4+'</h6>'
+    });
+    laxmiInfoWindow.open(map, laxmiMarker);
+    laxmiMarker.addListener('click', function(){
+        if(gate4IsOpened == true){
+		laxmiInfoWindow.open(map, laxmiMarker);
+            gate4IsOpened = false;
+        } else if(gate4IsOpened == false){
+            laxmiInfoWindow.close();
+            gate4IsOpened = true;
+        }
+	});
     //Gharpure Ghat
     var gharpureLatLong = {lat:20.008742, lng:73.7838397};
     var gharpureTitle = "Gharpure Ghat";
@@ -124,6 +143,21 @@ function initMap() {
         animation : google.maps.Animation.DROP
     });
     
+    var gharpureInfoWindow = new google.maps.InfoWindow({
+        content : '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Gharpure</h5>'+
+                    '<h6 id="megaCountText" style="text-align: center; font-size="30px">'+gate5+'</h6>'
+    });
+    gharpureInfoWindow.open(map, gharpureMarker);
+    gharpureMarker.addListener('click', function(){
+        if(gate5IsOpened == true){
+		gharpureInfoWindow.open(map, gharpureMarker);
+            gate5IsOpened = false;
+        } else if(gate5IsOpened == false){
+            gharpureInfoWindow.close();
+            gate5IsOpened = true;
+        }
+	});
+    
     //Saraf Bazar
     var sarafLatLong = {lat:20.00544559, lng:73.79083704};
     var sarafTitle = "Saraf Bazar";
@@ -135,6 +169,21 @@ function initMap() {
         map : map,
         animation : google.maps.Animation.DROP
     });
+    
+    var sarafInfoWindow = new google.maps.InfoWindow({
+        content : '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Saraf</h5>'+
+                    '<h6 id="megaCountText" style="text-align: center; font-size="30px">'+gate6+'</h6>'
+    });
+    sarafInfoWindow.open(map, sarafMarker);
+    sarafMarker.addListener('click', function(){
+        if(gate6IsOpened == true){
+		sarafInfoWindow.open(map, sarafMarker);
+            gate6IsOpened = false;
+        } else if(gate6IsOpened == false){
+            sarafInfoWindow.close();
+            gate6IsOpened = true;
+        }
+	});
     
 	//MarkerClustering
 	var markerClustererCollection = [amardhamMarker,rokdobaMarker,kothawdeMarker,laxmiMarker,gharpureMarker,sarafMarker];

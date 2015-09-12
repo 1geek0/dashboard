@@ -47,7 +47,7 @@ var resetOrNot = false;
 var beBack = false;
 var upVotes = [];
 
-reset();
+setInterval(function(){reset();},60000);
 
 
 function reset(){
