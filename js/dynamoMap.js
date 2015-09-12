@@ -105,6 +105,7 @@ function getLast(){
                                 gate1Long = returnedLongitude;
                                 break;
                             case 2:
+                                gate2 = returnedValue;
                                 gates.push({id : "2", count : gate2});
                                 gate2Lat = returnedLatitude;
                                 gate2Long = returnedLongitude;
