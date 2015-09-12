@@ -7,9 +7,21 @@
             window.fbAsyncInit = function() {
                 FB.init({
                     appId      : '505521962939823',
+                    secret     : '0765540c09c388476fce69ba52de7d32',
                     xfbml      : true,
                     version    : 'v2.4'
                 });
+                FB.api(
+                "/113124472034820",
+                function (response) {
+                    if (response && !response.error) {
+                        /* handle the result */
+                        console.log(response);
+                    } else{
+                        console.log(response.error);
+                    }
+                }
+            );
             };
             
             (function(d, s, id){
@@ -20,15 +32,46 @@
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
             /* make the API call */
-            FB.api(
-                "/{photo-id}",
-                function (response) {
-                    if (response && !response.error) {
-                        /* handle the result */
-                    }
-                }
-            );
         </script>
-        
+        <entry>
+  <title><![CDATA[Sample Page uploaded a photo.]]></title>
+  <id>http://www.facebook.com/photo.php?pid=123&amp;id=123</id>
+  <fb:id>123</fb:id>
+  <link rel="alternate" type="text/html" 
+    href="http://www.facebook.com/photo.php?pid=123&amp;id=123" />
+  <published>2013-04-13T00:01:23-07:00</published>
+  <updated>2013-04-13T00:01:23-07:00</updated>
+  <author>
+    <name>Sample Page</name>
+    <fb:id>123</fb:id>
+    <uri>http://www.facebook.com/profile.php?id=123</uri>
+    <permanent_uri>
+      http://www.facebook.com/profile.php?id=123
+    </permanent_uri>
+    <display_uri>http://www.facebook.com/samplepage</display_uri>
+    <icon>http://profile.ak.fbcdn.net/hprofile-ak-snc6/123_q.jpg</icon>
+    <is_page>1</is_page>
+    <fan_count>331</fan_count>
+  </author>
+  <category term="Upload Photos" label="Upload Photos" />
+  <activity:verb>http://activitystrea.ms/schema/1.0/post/</activity:verb>
+  <activity:object>
+    <id>http://www.facebook.com/photo.php?pid=123&amp;id=123</id>
+    <thumbnail>
+      https://fbcdn-photos-a-a.akamaihd.net/hphotos-ak-prn1/123_t.png
+    </thumbnail>
+    <link rel="enclosure" type="text/jpeg" 
+        href="https://fbcdn-photos-c-a-.akamaihd.net/hphotos-ak-ash4/123111_t.jpg" />
+    <caption>This is an awesome photo.</caption>
+    <published>2013-04-13T00:01:23-07:00</published>
+    <link rel="alternate" type="text/html" 
+      href="http://www.facebook.com/photo.php?pid=123&amp;id=123" />
+    <link rel="preview" type="image/png" 
+      href="https://fbcdn-photos-a-a.akamaihd.net/hphotos-ak-prn1/123_t.png" />
+    <activity:object-type>
+      http://activitystrea.ms/schema/1.0/photo/
+    </activity:object-type>
+  </activity:object>
+</entry>    
     </body>
 </html>
