@@ -39,8 +39,8 @@ function initMap() {
 	});
 	
 	var rokdobaInfoWindow = new google.maps.InfoWindow({
-		content :   '<span id="totalCountTitle" class="card-title" style="pointer-events: auto; margin-left: 0px; margin-top: 0px; text-align: center; text-decoration: none; font-weight: 500; font-size: 38px;text-color:">Rokdoba Exit Gate</span>'+
-                    '<h1 id="megaCountText" style="font-size: 30px;text-align: center;">'+gate1+'</h1>'
+		content :   '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Rokdoba</h5>'+
+                    '<h6 id="megaCountText" style="text-align: center; font-size="30px">'+gate1+'</h6>'
 	});
 	
 	rokdobaMarker.addListener('click', function(){
@@ -71,7 +71,7 @@ function initMap() {
 	});
 	
 	var amardhamInfoWindow = new google.maps.InfoWindow({
-		content : '<span id="totalCountTitle" class="card-title" style="pointer-events: auto; margin-left: 0px; margin-top: 0px; text-align: center; text-decoration: none; font-weight: 500; font-size: 38px;text-color:">Amardham Exit Gate</span>'+
+		content : '<span class="card-title">Amardham Exit Gate</span>'+
                     '<h1 id="megaCountText" style="font-size: 30px;text-align: center;">'+gate2+'</h1>'
 		});
 	
@@ -89,40 +89,59 @@ function initMap() {
             gate2IsOpened = true;
         }
 	});
-    //Home
-    var homeLatLong = {lat:gate8Lat,lng:gate8Long};
-    var homeMarker = new google.maps.Marker({
-        position : homeLatLong,
-        animation : google.maps.Animation.DROP,
-        title : "Nilay Home",
-        map : map,
-        count : gate8
+    //Kothawde
+    var kothawdeLatLong = {lat:19.992728, lng:73.805187};
+    var kothawdeTitle = "Kothawde Trading";
+    
+    var kothawdeMarker = new google.maps.Marker({
+        position : kothawdeLatLong,
+        animation: google.maps.Animation.DROP,
+		title : gate3,
+		map : map,
+        count : gate3
     });
-    var homeInfoWindow = new google.maps.InfoWindow({
-		content : '<span id="totalCountTitle" class="card-title" style="pointer-events: auto; margin-left: 0px; margin-top: 0px; text-align: center; text-decoration: none; font-weight: 500; font-size: 38px;text-color:">Nilay Home</span>'+
-                    '<h1 id="megaCountText" style="font-size: 30px;text-align: center;">'+gate8+'</h1>'
-		});
-	
-	homeMarker.addListener('click', function(){
-        if(gate8IsOpened == true){
-		homeInfoWindow.open(map, homeMarker);
-            if(gate2IsOpened == false){
-                amardhamInfoWindow.close();
-            } else if(gate1IsOpened == false){
-                rokdobaInfoWindow.close();
-            }
-            gate8IsOpened = false;
-        } else if(gate8IsOpened == false){
-            homeInfoWindow.close();
-            gate8IsOpened = true;
-        }
-	});
+    //Laxmi Ghat
+    var laxmiLatLong = {lat:20.001449, lng:73.811142};
+    var laxmiTitle = "Laxmi Ghat";
+    
+    var laxmiMarker = new google.maps.Marker({
+        position : laxmiLatLong,
+        title : laxmiTitle,
+        count : gate4,
+        map : map,
+        animation : google.maps.Animation.DROP
+    });
+    
+    //Gharpure Ghat
+    var gharpureLatLong = {lat:20.008742, lng:73.7838397};
+    var gharpureTitle = "Gharpure Ghat";
+    
+    var gharpureMarker = new google.maps.Marker({
+        position : gharpureLatLong,
+        title : gharpureTitle,
+        count : gate5,
+        map : map,
+        animation : google.maps.Animation.DROP
+    });
+    
+    //Saraf Bazar
+    var sarafLatLong = {lat:20.00544559, lng:73.79083704};
+    var sarafTitle = "Saraf Bazar";
+    
+    var sarafMarker = new google.maps.Marker({
+        position : sarafLatLong,
+        title : sarafTitle,
+        count : gate6,
+        map : map,
+        animation : google.maps.Animation.DROP
+    });
+    
 	//MarkerClustering
-	var markerClustererCollection = [amardhamMarker,rokdobaMarker,homeMarker];
+	var markerClustererCollection = [amardhamMarker,rokdobaMarker,kothawdeMarker,laxmiMarker,gharpureMarker,sarafMarker];
     var totalCount = 0;
     for(var i=0;i<markerClustererCollection.length;i++){
         totalCount += markerClustererCollection[i].count;
     }
-	var markerClustererOptions = {gridSize: 50, maxZoom: 15, count: totalCount};
+	var markerClustererOptions = {gridSize: 50, maxZoom: 13, count: totalCount};
 	var markerClusterer = new MarkerClusterer(map, markerClustererCollection, markerClustererOptions);
 }
