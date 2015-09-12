@@ -22,7 +22,7 @@ var gate10Stamp = "";
 function initMap() {
 	//Main Map
 	var map = new google.maps.Map(document.getElementById('mapFull'), {
-		center: {lat: 20.0000, lng: 73.7800},
+		center: {lat: 20.00809165, lng: 73.792308},
 		zoom: 15,
 		'mapTypeId': google.maps.MapTypeId.ROADMAP
 	});
