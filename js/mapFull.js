@@ -80,7 +80,7 @@ function initMap() {
             gate2IsOpened = true;
         }
 	});
-    /*//Kothawde
+    //Kothawde
     var kothawdeLatLong = {lat:19.992728, lng:73.805187};
     var kothawdeTitle = "Kothawde Trading";
     
@@ -104,7 +104,7 @@ function initMap() {
             kothawdeInfoWindow.close();
             gate3IsOpened = true;
         }
-	});*/
+	});
     //Laxmi Ghat
     var laxmiLatLong = {lat:20.001449, lng:73.811142};
     var laxmiTitle = "Laxmi Ghat";
@@ -185,7 +185,7 @@ function initMap() {
 	});
     */
 	//MarkerClustering
-	var markerClustererCollection = [amardhamMarker,rokdobaMarker,laxmiMarker,gharpureMarker];
+	var markerClustererCollection = [amardhamMarker,rokdobaMarker,kothawdeMarker,laxmiMarker,gharpureMarker];
     var totalCount = 0;
     for(var i=0;i<markerClustererCollection.length;i++){
         totalCount += markerClustererCollection[i].count;
