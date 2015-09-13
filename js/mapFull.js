@@ -80,7 +80,7 @@ function initMap() {
             gate2IsOpened = true;
         }
 	});
-    //Kothawde
+    /*//Kothawde
     var kothawdeLatLong = {lat:19.992728, lng:73.805187};
     var kothawdeTitle = "Kothawde Trading";
     
@@ -104,7 +104,7 @@ function initMap() {
             kothawdeInfoWindow.close();
             gate3IsOpened = true;
         }
-	});
+	});*/
     //Laxmi Ghat
     var laxmiLatLong = {lat:20.001449, lng:73.811142};
     var laxmiTitle = "Laxmi Ghat";
@@ -156,9 +156,9 @@ function initMap() {
             gate5IsOpened = true;
         }
 	});
-    
+    /*
     //Saraf Bazar
-    var sarafLatLong = {lat:20.00655661, lng:73.79083704};
+    var sarafLatLong = {lat:20.00544559, lng:73.79083704};
     var sarafTitle = "Saraf Bazar";
     
     var sarafMarker = new google.maps.Marker({
@@ -170,7 +170,7 @@ function initMap() {
     });
     
     var sarafInfoWindow = new google.maps.InfoWindow({
-        content : '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Saraf Bazar</h5>'+
+        content : '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Saraf</h5>'+
                     '<h6 id="megaCountText" style="text-align: center; font-size="30px">'+gate6+'</h6>'
     });
     sarafInfoWindow.open(map, sarafMarker);
@@ -183,9 +183,9 @@ function initMap() {
             gate6IsOpened = true;
         }
 	});
-    
+    */
 	//MarkerClustering
-	var markerClustererCollection = [amardhamMarker,rokdobaMarker,kothawdeMarker,laxmiMarker,gharpureMarker,sarafMarker];
+	var markerClustererCollection = [amardhamMarker,rokdobaMarker,laxmiMarker,gharpureMarker];
     var totalCount = 0;
     for(var i=0;i<markerClustererCollection.length;i++){
         totalCount += markerClustererCollection[i].count;

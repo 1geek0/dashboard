@@ -19,21 +19,20 @@
 
 <body>
     <nav class="teal center" role="navigation">
-        <div class="nav-wrapper container center">
-            <ul id="nav-mobile left">
+        <div class="nav-wrapper container left">
+            <ul class="nav-mobile left">
                 <li class="z-depth-1"><a href="map.html" style="font-weight: 400;font-size: 40px;" class="waves-effect">Map</a></li>
                 <li class="divider"><a>    </a></li>
                 <li class="z-depth-1"><a href="Ashioto2Police.apk" style="font-weight: 400;font-size: 40px;">Download App</a></li>
                 <li class="divider"><a>    </a></li>
-                <li class="z-depth-1"><a href="mobile-tower.html" style="font-weight: 400;font-size: 40px;">Mobile Tower Crowd</a></li>
-                <li class="divider"><a>    </a></li>
                 <li class="z-depth-1"><i id="refreshButton" class="large material-icons noIbar waves-effect">loop</i></li>
-                <li class="divider"><a>    </a></li>
             </ul>
         </div>
-        <div class="nav-wrapper container right">
-            <ul id="nav-mobile right">
-                
+        <div id="rightCon" class="nav-wrapper container right">
+        <ul class="nav-mobile right">
+                <li class="z-dept-4"><a><img src="Techliberty_final_logo.png" style="height:65px;width:240px" id="logo" href="#"/></a></li>
+                <li> <a>    </a></li>
+                <li><img src="kumbhathon.png" style="height:65px;width:240px" href="#"/></li>
             </ul>
         </div>
     </nav>
@@ -55,8 +54,8 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col s2 m2">
+    <div id="rowCards" class="row center">
+        <div class="col s2 m3">
             <div id="rokdobaCard" class="card teal z-depth-3">
                 <div class="card-content white-text center">
                     <span id="rokdobaGateTitle" class="card-title center">Rokdoba: <i class="material-icons"></i></span>
@@ -64,21 +63,21 @@
                 </div>
             </div>
         </div>
-        <div class="card teal z-depth-3 col s3 m2" id="amardhamGateCard">
+        <div class="card teal z-depth-3 col s3 m3" id="amardhamGateCard">
             <div class="card-content white-text center">
                 <span id="rokdobaGateTitle" class="card-title center">Amardham: <i class="material-icons"></i></span>
                 <h1 id="countAmardham" class="card-title center" style="font-size:30px">Loading</h1>
             </div>
         </div>
-        <div class="col s2 m2">
+        <!--<div class="col s2 m2">
             <div id="rokdobaCard" class="card teal z-depth-3">
                 <div class="card-content white-text center">
                     <span id="rokdobaGateTitle" class="card-title center" >Kothawde: <i class="material-icons"></i></span>
                     <h1 id="countKothawde" class="card-title center" style="font-size:30px">Loading</h1>
                 </div>
             </div>
-        </div>
-        <div class="col s2 m2">
+        </div>-->
+        <div class="col s2 m3">
             <div id="rokdobaCard" class="card teal z-depth-3">
                 <div class="card-content white-text center">
                     <span id="rokdobaGateTitle" class="card-title center" >Laxmi. Ghat: <i class="material-icons"></i></span>
@@ -86,19 +85,11 @@
                 </div>
             </div>
         </div>
-        <div class="col s2 m2">
+        <div class="col s2 m3">
             <div id="rokdobaCard" class="card teal z-depth-3">
                 <div class="card-content white-text center">
                     <span id="rokdobaGateTitle" class="card-title center">Gharpure: <i class="material-icons"></i></span>
                     <h1 id="countGharpure" class="card-title center" style="font-size:30px">Loading</h1>
-                </div>
-            </div>
-        </div>
-        <div class="col s2 m2">
-            <div id="rokdobaCard" class="card teal z-depth-3">
-                <div class="card-content white-text center">
-                    <span id="rokdobaGateTitle" class="card-title center">Saraf Bazar: <i class="material-icons"></i></span>
-                    <h1 id="countPanchavati" class="card-title center" style="font-size:30px">Loading</h1>
                 </div>
             </div>
         </div>
@@ -115,9 +106,6 @@
     <script type="text/javascript" src="js/map.js"></script>
 
     <footer class="page-footer teal">
-        <img src="logo_hd.jpg" style="height:120px;width:120px" href="#"/>
-        <img src="Techliberty_final_logo.png" style="height:120px;width:240px" id="logo" href="#"/>
-        <img src="kumbhathon.png" style="height:120px;width:240px" href="#"/>
     </footer>
 
 
