@@ -67,7 +67,7 @@ reset();
 function reset(){
 	if(position<11){
 		if(resetOrNot == false){
-	setTimeout(function(){getLast()},2000);
+	setTimeout(function(){getLast()},500);
 		}
 		else{
 		console.log("Reached else");
