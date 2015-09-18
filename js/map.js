@@ -81,7 +81,7 @@ function initMap() {
             gate2IsOpened = true;
         }
 	});
-    //Kothawde
+    /*//Kothawde
     var kothawdeLatLong = {lat:19.992728, lng:73.805187};
     var kothawdeTitle = "Kothawde Trading";
     
@@ -105,7 +105,7 @@ function initMap() {
             kothawdeInfoWindow.close();
             gate3IsOpened = true;
         }
-	});
+	});*/
     //Laxmi Ghat
     var laxmiLatLong = {lat:20.001449, lng:73.811142};
     var laxmiTitle = "Laxmi Ghat";

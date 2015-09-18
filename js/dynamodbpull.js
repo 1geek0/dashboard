@@ -87,12 +87,18 @@ function reset(){
 function getLast(){
         var marams = {
             TableName : 'ashioto2',
-            KeyConditionExpression :  "gateID=:gateId",
+            ExpressionAttributeNames: {
+                "#T" : "timestamp"
+            },
+            KeyConditionExpression :  "gateID=:gateId AND #T>:time",
 			ExpressionAttributeValues :
 			{
 				":gateId":{
 				N: position.toString()
 			},
+                ":time":{
+                    N: "1442286530"
+                },
 			},
             ScanIndexForward : false,
 			Limit : 1,
@@ -198,18 +204,33 @@ function updateMegaCount(){
     var busiestId;
     var busiestCount;
     var sortByCount = gates.slice(0);
+    //HTML Views
+	var megaCountTextView = document.getElementById('megaCountText');
+    var busiestIdTextView = document.getElementById('busiestGateTitle');
+    var busiestCountTextView = document.getElementById('busiestCountText');
+    var zeroes = 0;
+    var gateViews = [countRokdoba,countAmardham,countLaxmi,countGharpure]
+    for(var i=0;i<gates.length;i++){
+        if(gates[i].count==0){
+            zeroes+=1
+        }
+    }
+    if(zeroes==gates.length){
+        for(var i=0;i<gateViews.length+1;i++){
+            console.log(gateViews[i]);
+            gateViews[i].innerHTML = "Looks like we're not live yet!";
+        }
+        megaCountTextView.innerHTML = "No Data";
+        busiestCountTextView.innerHTML = "No Data";
+    }
     sortByCount.sort(function(a,b){
         return a.count - b.count;
     }).reverse();
     busiestId = sortByCount[0].id;
     busiestCount = sortByCount[0].count;
     console.log("By Count: ", sortByCount);
-	//HTML Views
-	var megaCountTextView = document.getElementById('megaCountText');
 	megaCountTextView.innerHTML = megaCount;
-    var busiestIdTextView = document.getElementById('busiestGateTitle');
     busiestIdTextView.innerHTML = "Busiest Gate: " + busiestId;
-    var busiestCountTextView = document.getElementById('busiestCountText');
     busiestCountTextView.innerHTML = busiestCount;
     initMap();
 }
