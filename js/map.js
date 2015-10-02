@@ -23,13 +23,13 @@ var gate10Stamp = "";
 function initMap() {
 	//Main Map
 	var map = new google.maps.Map(document.getElementById('map'), {
-		center: {lat: 20.008011, lng: 73.792308},
-		zoom: 14,
+		center: {lat: 19.994999, lng: 73.708065},
+		zoom: 20,
 		'mapTypeId': google.maps.MapTypeId.ROADMAP
 	});
 	//Rokdoba
-	var rokdobaLatLong = {lat:20.00294, lng:73.79324};
-	var rokdobaTitle = "Rokdoba";
+	var rokdobaLatLong = {lat:19.994999, lng:73.708065};
+	var rokdobaTitle = "Gate 1";
 	
 	var rokdobaMarker = new google.maps.Marker({
 		position : rokdobaLatLong,
@@ -40,7 +40,7 @@ function initMap() {
 	});
 	
 	var rokdobaInfoWindow = new google.maps.InfoWindow({
-		content :   '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Rokdoba</h5>'+
+		content :   '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Gate 1</h5>'+
                     '<h6 id="megaCountText" style="text-align: center; font-size="30px">'+gate1+'</h6>'
 	});
     
@@ -55,8 +55,8 @@ function initMap() {
         }
 	});
 	//Amardham
-	var amardhamLatLong = {lat:19.99866, lng:73.79690};
-	var amardhamTitle = "Amardham Exit";
+	var amardhamLatLong = {lat:19.994904, lng:73.708216};
+	var amardhamTitle = "Gate 2";
 	
 	var amardhamMarker = new google.maps.Marker({
 		position : amardhamLatLong,
@@ -67,7 +67,7 @@ function initMap() {
 	});
 	
 	var amardhamInfoWindow = new google.maps.InfoWindow({
-		content : '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Amardham</h5>'+
+		content : '<h5 id="totalCountTitle" class="card-title" style="text-align: center;">Gate 2</h5>'+
                     '<h6 id="megaCountText" style="text-align: center; font-size="30px">'+gate2+'</h6>'
 		});
     
@@ -106,9 +106,9 @@ function initMap() {
             gate3IsOpened = true;
         }
 	});*/
-    //Laxmi Ghat
-    var laxmiLatLong = {lat:20.001449, lng:73.811142};
-    var laxmiTitle = "Laxmi Ghat";
+    /*//Laxmi Ghat
+//    var laxmiLatLong = {lat:20.001449, lng:73.811142};
+//    var laxmiTitle = "Laxmi Ghat";
     
     var laxmiMarker = new google.maps.Marker({
         position : laxmiLatLong,
@@ -156,7 +156,7 @@ function initMap() {
             gharpureInfoWindow.close();
             gate5IsOpened = true;
         }
-	});
+	});*/
     /*
     //Saraf Bazar
     var sarafLatLong = {lat:20.00544559, lng:73.79083704};
@@ -186,11 +186,11 @@ function initMap() {
 	});
     */
 	//MarkerClustering
-	var markerClustererCollection = [amardhamMarker,rokdobaMarker,kothawdeMarker,laxmiMarker,gharpureMarker];
+	var markerClustererCollection = [amardhamMarker,rokdobaMarker];
     var totalCount = 0;
     for(var i=0;i<markerClustererCollection.length;i++){
         totalCount += markerClustererCollection[i].count;
     }
-	var markerClustererOptions = {gridSize: 50, maxZoom: 13, count: totalCount};
+	var markerClustererOptions = {gridSize: 50, maxZoom: 2, count: totalCount};
 	var markerClusterer = new MarkerClusterer(map, markerClustererCollection, markerClustererOptions);
 }
