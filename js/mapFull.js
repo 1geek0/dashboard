@@ -190,6 +190,6 @@ function initMap() {
     for(var i=0;i<markerClustererCollection.length;i++){
         totalCount += markerClustererCollection[i].count;
     }
-	var markerClustererOptions = {gridSize: 50, maxZoom: 13, count: totalCount};
+	var markerClustererOptions = {gridSize: 20, maxZoom: 13, count: totalCount};
 	var markerClusterer = new MarkerClusterer(map, markerClustererCollection, markerClustererOptions);
 }

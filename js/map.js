@@ -23,12 +23,12 @@ var gate10Stamp = "";
 function initMap() {
 	//Main Map
 	var map = new google.maps.Map(document.getElementById('map'), {
-		center: {lat: 19.994999, lng: 73.708065},
-		zoom: 20,
+		center: {lat: 19.990269, lng: 73.761286},
+		zoom: 19,
 		'mapTypeId': google.maps.MapTypeId.ROADMAP
 	});
 	//Rokdoba
-	var rokdobaLatLong = {lat:19.994999, lng:73.708065};
+	var rokdobaLatLong = {lat:19.990423, lng:73.760878};
 	var rokdobaTitle = "Gate 1";
 	
 	var rokdobaMarker = new google.maps.Marker({
@@ -55,7 +55,7 @@ function initMap() {
         }
 	});
 	//Amardham
-	var amardhamLatLong = {lat:19.994904, lng:73.708216};
+	var amardhamLatLong = {lat:19.990806, lng:73.762133};
 	var amardhamTitle = "Gate 2";
 	
 	var amardhamMarker = new google.maps.Marker({
