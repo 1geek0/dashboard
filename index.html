@@ -1,11 +1,13 @@
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-    <title>Ashioto Dashboard</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Ashioto - Power of Footsteps</title>
     <link rel="shortcut icon" href="ashioto.ico">
+
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
     <style type="text/css">
@@ -17,27 +19,67 @@
     <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps/api/js/QuotaService.RecordEvent?1sfile%3A%2F%2F%2Fhome%2Fgeek%2Fdashboard%2Findex.html&amp;3sAIzaSyCrtfOkVRk9XCeU78C0YcGF2TS69MXLrhI&amp;5e0&amp;6u1&amp;7sdq9xhn&amp;callback=_xdc_._m2kvvd&amp;token=53836"></script>
 </head>
 
-<body>
-    <nav class="teal center" role="navigation">
-        <div class="nav-wrapper container left">
-            <a href="#!" style="font-weight: 400px;font-size: 30px;">Mahindra & Mahindra Founder's Day 2nd Oct</a>
-            <ul class="nav-mobile left">
-                <!--<li class="z-depth-1"><a href="map.html" style="font-weight: 400;font-size: 40px;" class="waves-effect">Map</a></li>-->
-                <li class="divider"><a>    </a></li>
-                <li class="z-depth-1"><a target="_blank" href="http://www.johnwernerphotography.com/Countries/India-Activities/Aug-2015" style="font-weight: 400;font-size: 40px;">Gallery</a></li>
-                <li class="divider"><a>    </a></li>
-                <li class="z-depth-1"><i id="refreshButton" class="large material-icons noIbar waves-effect">loop</i></li>
-            </ul>
+<body style>
+    <nav class="teal" role="navigation">
+    <!--<ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">three</a></li>
+    </ul>-->
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Ashioto</a>
+      <ul class="right hide-on-med-and-down">
+        <!--<li><a href="#">Navbar Link</a></li> -->
+        <li><a href="#"><i class="material-icons left">web</i>Media</a></li>
+        <li><a href="#"><i class="material-icons left">settings_remote</i>Devices</a></li>
+        <li><a href="http://goo.gl/WSnSbf"><i class="material-icons left">assessment</i>Dashboard</a></li>
+        <!--<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>-->
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav" style="left: -250px">
+        <!-- <li><a href="#">Navbar Link</a></li> -->
+        <li><a href="#"><i class="material-icons left">web</i>Media</a></li>
+        <li><a href="#"><i class="material-icons left">settings_remote</i>Devices</a></li>
+        <li><a href="http://goo.gl/WSnSbf"><i class="material-icons left">assessment</i>Dashboard</a></li>
+        <!--<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li> -->
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+   
+    <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-darken-2">Ashioto</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive crowd counting system</h5>
         </div>
-        <div id="rightCon" class="nav-wrapper container right">
-        <ul class="nav-mobile right">
-                <li class="z-dept-4"><a><img src="Techliberty_final_logo.png" style="height:65px;width:240px" id="logo" href="#"/></a></li>
-            </ul>
+        <div class="row center">
+          <a href="/#dasy" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Dashboard</a>
         </div>
-    </nav>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="background3.jpg"  style="display: block; transform: translate3d(-50%, 170px, 0px);"></div>
+  </div>
+
+<!-- Dash board Satar from here -->
+<div id="dasy" class="row">
+  <div class="col s12 teal darken-2 center z-depth-5">
+        <div >
+            <a class="white-text" href="http://www.nashikcitycentre.com/" style=" font-weight: 400px;font-size: 50px;">City Center Mall</a>
+        </div>
+    </div>
+</div>
+
     <div class="row">
         <div class="col s12 m6">
-            <div class="card teal z-depth-3">
+            <div class="card teal darken-1 z-depth-3">
                 <div class="card-content white-text center">
                     <span id="totalCountTitle" class="card-title" style="pointer-events: auto; margin-left: 0px; margin-top: 0px; text-align: center; text-decoration: none; font-weight: 500; font-size: 38px;">Total Count</span>
                     <h1 id="megaCountText" style="height: 72px; margin-left: -17px; margin-top: 29px; pointer-events: auto;">Loading</h1>
@@ -57,14 +99,14 @@
         <div class="col s3 m6">
             <div id="rokdobaCard" class="card teal z-depth-3">
                 <div class="card-content white-text center">
-                    <span id="rokdobaGateTitle" class="card-title center">Gate 1: <i class="material-icons"></i></span>
+                    <span id="rokdobaGateTitle" class="card-title center"><i class="material-icons">input</i>Gate 1:</span>
                     <h1 id="countRokdoba" class="card-title center" style="font-size:30px">Loading</h1>
                 </div>
             </div>
         </div>
         <div class="card teal z-depth-3 col s3 m6" id="amardhamGateCard">
             <div class="card-content white-text center">
-                <span id="rokdobaGateTitle" class="card-title center">Gate 2: <i class="material-icons"></i></span>
+                <span id="rokdobaGateTitle" class="card-title center"><i class="material-icons">input</i> Gate 2: </span>
                 <h1 id="countAmardham" class="card-title center" style="font-size:30px">Loading</h1>
             </div>
         </div>
@@ -91,20 +133,144 @@
                     <h1 id="countGharpure" class="card-title center" style="font-size:30px">Loading</h1>
                 </div>
             </div>
-        </div>
-    </div>-->
-    <div class="row">
-        <div id="map" class="col s12 m6"></div>
-        <div id="plot">
-    <!--<a href="https://plot.ly/~NilayKulkarni/748/" target="_blank" title="Kumbh Mela Parvani 3" style="display: block; text-align: center;"><img src="https://plot.ly/~NilayKulkarni/748.png" alt="Kumbh Mela Parvani 3" style="max-width: 100%;width: 1080px;"  width="1080" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="NilayKulkarni:748"  src="https://plot.ly/embed.js" async></script>-->
-</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+        </div>-->
     </div>
-    <script type="text/javascript" src="js/dynamodbpull.js"></script>
-    <script type="text/javascript" src="js/map.js"></script>
+    <div class="row">
+    <!--  
+      <div class="col s6 m6">This div is 6-columns wide</div>
+      <div class="col s6 m6 ">This div is 6-columns wide</div> -->
+    </div>
+ 
+<!--
+<div class="row users center-align"><div class="container">
+    <div class="row"><div class="col s12 integrates-with">Media</div></div>
+    <div class="row center-align">
+    <div class="col m3 s6"><img src="andriod.png" alt="Segment"></div>
+    <div class="col m3 s6"><img src="github.png" alt="GitHub"></div>
+    <div class="col m3 s6"><img src="aws.png" alt="Optimizely"></div>
+    <div class="col m3 s6"><img src="1.png" alt="Google Analytics"></div>
+</div>
+</div></div>
+</div>
+-->
 
-    <footer class="page-footer teal">
-    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="rowCards">
+                <div id="map" class="col s6 offser-s6">
+                    <script type="text/javascript" src="js/dynamodbpull.js"></script>
+                   <!-- <script type="text/javascript" src="js/map.js"></script> -->
+
+
+                </div>
+        <div id="plot">
+                <ul>
+                    <!--  Add the Plotly graph over here
+                    <li><a><img src="Techliberty_final_logo.png" style="height:290px;width:640px" id="logo" href="#"/></a></li>
+                </ul> -->
+
+
+                            <!--<a href="https://plot.ly/~NilayKulkarni/748/" target="_blank" title="Kumbh Mela Parvani 3" style="display: block; text-align: center;"><img src="https://plot.ly/~NilayKulkarni/748.png" alt="Kumbh Mela Parvani 3" style="max-width: 100%;width: 1080px;"  width="1080" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+                            <script data-plotly="NilayKulkarni:748"  src="https://plot.ly/embed.js" async></script>-->
+        </div>                                                                                                                  
+    </div>
+    
+
+     <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <p>
+            <a href="https://facebook.com/parikshit.jadhav" target="_blank" style="margin-right:20px;"><i class="white-text fa fa-facebook fa-4x "></i>
+            <a href="https://twitter.com/ParikshitRaje" target="_blank" style="margin-right:20px;"><i class="white-text fa fa-twitter fa-4x"></i></a>
+            <a href="https://github.com/parikshitraje" target="_blank"><i class="fa fa-github fa-4x white-text"></i></a>
+          </p>
+              <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+            <p class="white-text" style="margin-bottom: 0px;">Join the newsletter</p>
+            <div class="mc-field-group">
+              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Enter email" style="color:#fbc02d;">
+            </div>
+              <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+              </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;"><input type="text" name="b_b066facd44f5a378509bc4e82_f1fb33c6e5" class="mailchimp" tabindex="-1" value=""></div>
+                <div class="clear">
+                <input type="submit" value="Subscribe"  name="subscribe to newsletter" id="mc-embedded-subscribe" class="btn button teal darken-2"></div>
+                </div>
+            </form>
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Pricing</a></li>
+            <li><a class="white-text" href="#!">Blog</a></li>
+            <li><a class="white-text" href="#!">Docs</a></li>
+            <li><a class="white-text" href="#!">MIT-Kumbhathon</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">TL Solutions</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Team</a></li>
+            <li><a class="white-text" href="#!">Terms of service</a></li>
+            <li><a class="white-text" href="#!">Privacy</a></li>
+            <li><a class="white-text" href="#!">Partner with us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2015 Tech Liberty Solution - All Rights Reserved
+      </div>
+    </div>
+  </footer>
 
 
     <!--  Scripts-->
