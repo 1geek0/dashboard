@@ -97,7 +97,7 @@ function getLast(){
 				N: position.toString()
 			},
                 ":time":{
-                    N: "1442286530"
+                    N: "1448284160"
                 },
 			},
             ScanIndexForward : false,

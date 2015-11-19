@@ -15,7 +15,8 @@ html, body { height: 100%; margin: 0; padding: 0; }
 }
 #plot{
     float: right;
-    width: 50%;
+    width: 100%;
+    height: 50%;
 }
 #mapFull{
     height: 100%;
