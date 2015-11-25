@@ -1,3 +1,6 @@
+$(document).ready(function(){
+      $('.parallax').parallax();
+    });
 //Gate Counts
 var gate1 = 0;
 var gate2 = 0;
@@ -97,7 +100,7 @@ function getLast(){
 				N: position.toString()
 			},
                 ":time":{
-                    N: "1448284160"
+                    N: "1448445510"
                 },
 			},
             ScanIndexForward : false,
@@ -230,7 +233,7 @@ function updateMegaCount(){
     busiestCount = sortByCount[0].count;
     console.log("By Count: ", sortByCount);
 	megaCountTextView.innerHTML = megaCount;
-    busiestIdTextView.innerHTML = "Busiest Gate: " + busiestId;
+    busiestIdTextView.innerHTML = "Rate of Entry " + busiestId;
     busiestCountTextView.innerHTML = busiestCount;
     initMap();
 }
