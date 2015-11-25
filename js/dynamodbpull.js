@@ -45,6 +45,7 @@ var countKothawde = document.getElementById('countKothawde');
 var countLaxmi = document.getElementById('countLaxmi');
 var countGharpure = document.getElementById('countGharpure');
 var countPanchavati = document.getElementById('countPanchavati');
+var megaCountTextView = document.getElementById('megaCountText');
 
 //DynamoDB initialization
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
@@ -60,9 +61,9 @@ var resetOrNot = false;
 var beBack = false;
 var upVotes = [];
 
-refresh.addEventListener('click',reset);
+refresh.addEventListener('click',getLast);
 
-setInterval(reset,20000);
+setInterval(getLast,20000);
 
 reset();
 
@@ -75,8 +76,9 @@ function reset(){
 		else{
 		console.log("Reached else");
 		if(resetOrNot == true){
+            console.log(gate1.toString());
 			updateMegaCount();
-			megaCount = 0;
+			
 			resetOrNot = false;
 		}
 		resetOrNot = false;
@@ -100,7 +102,7 @@ function getLast(){
 				N: position.toString()
 			},
                 ":time":{
-                    N: "1448445510"
+                    N: "1448435510"
                 },
 			},
             ScanIndexForward : false,
@@ -121,8 +123,10 @@ function getLast(){
                         
                         switch(returnedGateId){
                             case 1:
-                                countRokdoba.innerHTML = returnedValue;
+                                console.log("success");
+                                megaCountTextView.innerHTML = returnedValue;
                                 gate1 = returnedValue;
+                                console.log(gate1);
                                 gates.push({id : "1", count : gate1});
                                 gate1Lat = returnedLatitude;
                                 gate1Long = returnedLongitude;
@@ -201,14 +205,14 @@ function getLast(){
             }
         });
 		position++;
-	reset(false);
+	reset(true);
 }
 function updateMegaCount(){
     var busiestId;
     var busiestCount;
     var sortByCount = gates.slice(0);
     //HTML Views
-	var megaCountTextView = document.getElementById('megaCountText');
+	
     var busiestIdTextView = document.getElementById('busiestGateTitle');
     var busiestCountTextView = document.getElementById('busiestCountText');
     var zeroes = 0;
@@ -232,7 +236,7 @@ function updateMegaCount(){
     busiestId = sortByCount[0].id;
     busiestCount = sortByCount[0].count;
     console.log("By Count: ", sortByCount);
-	megaCountTextView.innerHTML = megaCount;
+	megaCountTextView.innerHTML = gate1;
     busiestIdTextView.innerHTML = "Rate of Entry " + busiestId;
     busiestCountTextView.innerHTML = busiestCount;
     initMap();
