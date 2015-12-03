@@ -1,0 +1,122 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>Ashioto Dashboard</title>
+    <link rel="shortcut icon" href="ashioto.ico">
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <style type="text/css">
+    </style>
+    <!-- JS -->
+    <script type="text/javascript" src="js/aws-sdk-2.1.50.min.js"></script>
+    <script type="text/javascript" src="js/markerclusterer.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps/api/js/QuotaService.RecordEvent?1sfile%3A%2F%2F%2Fhome%2Fgeek%2Fdashboard%2Findex.html&amp;3sAIzaSyCrtfOkVRk9XCeU78C0YcGF2TS69MXLrhI&amp;5e0&amp;6u1&amp;7sdq9xhm&amp;callback=_xdc_._m2kvvc&amp;token=118737"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps/api/js/QuotaService.RecordEvent?1sfile%3A%2F%2F%2Fhome%2Fgeek%2Fdashboard%2Findex.html&amp;3sAIzaSyCrtfOkVRk9XCeU78C0YcGF2TS69MXLrhI&amp;5e0&amp;6u1&amp;7sdq9xhn&amp;callback=_xdc_._m2kvvd&amp;token=53836"></script>
+</head>
+
+<body>
+    
+    <nav class="teal center" role="navigation">
+        <div class="nav-wrapper container left">
+            <a href="#!" style="font-weight: 400px;font-size: 50px;">SulaFest 2016</a>
+            <ul class="nav-mobile left">
+                <!--<li class="z-depth-1"><a href="map.html" style="font-weight: 400;font-size: 40px;" class="waves-effect">Map</a></li>-->
+                <li class="divider"><a>    </a></li>
+                <li class="z-depth-1"><a target="_blank" href="http://www.johnwernerphotography.com/Countries/India-Activities/Aug-2015" style="font-weight: 400;font-size: 40px;">Gallery</a></li>
+                <li class="divider"><a>    </a></li>
+                <li class="z-depth-1"><i id="refreshButton" class="large material-icons noIbar waves-effect">loop</i></li>
+            </ul>
+        </div>
+        <div id="rightCon" class="nav-wrapper container right">
+        <ul class="nav-mobile right">
+                <!--<li class="z-dept-4"><a><img src="Techliberty_final_logo.png" style="height:65px;width:240px" id="logo" href="#"/></a></li>-->
+            </ul>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card teal z-depth-3">
+                <div class="card-content white-text center">
+                    <span id="totalCountTitle" class="card-title" style="pointer-events: auto; margin-left: 0px; margin-top: 0px; text-align: center; text-decoration: none; font-weight: 500; font-size: 38px;">Total Count</span>
+                    <h1 id="megaCountText" style="height: 72px; margin-left: -17px; margin-top: 29px; pointer-events: auto;"><font face="font/roboto/Shivaji02">Loading</font></h1>
+                </div>
+            </div>
+        </div>
+        <!--<div class="col s12 m6">
+            <div class="card teal z-depth-3">
+                <div class="card-content white-text center">
+                    <span id="busiestGateTitle" class="card-title center" style="pointer-events: auto; margin-left: 0px; margin-top: 0px; text-align: center; text-decoration: none; font-weight: 500; font-size: 38px;">Rate of Entry</span>
+                    <h1 id="busiestCountText" style="height: 72px; margin-left: -17px; margin-top: 29px; pointer-events: auto;">Loading</h1>
+                </div>
+            </div>
+        </div>-->
+    <!--</div>
+    <div id="rowCards" class="row center">
+        <div class="col s3 m6">
+            <div id="rokdobaCard" class="card teal z-depth-3">
+                <div class="card-content white-text center">
+                    <span id="rokdobaGateTitle" class="card-title center">Gate 1: <i class="material-icons"></i></span>
+                    <h1 id="countRokdoba" class="card-title center" style="font-size:30px">Loading</h1>
+                </div>
+            </div>
+        </div>
+        <div class="card teal z-depth-3 col s3 m6" id="amardhamGateCard">
+            <div class="card-content white-text center">
+                <span id="rokdobaGateTitle" class="card-title center">Gate 2: <i class="material-icons"></i></span>
+                <h1 id="countAmardham" class="card-title center" style="font-size:30px">Loading</h1>
+            </div>
+        </div>
+            <!--<div class="col s2 m2">
+                <div id="rokdobaCard" class="card teal z-depth-3">
+                    <div class="card-content white-text center">
+                        <span id="rokdobaGateTitle" class="card-title center" >Shahi Marg Exit: <i class="material-icons"></i></span>
+                        <h1 id="countKothawde" class="card-title center" style="font-size:30px">Loading</h1>
+                    </div>
+                </div>
+            </div>-->
+        <!--<div class="col s2 m3">
+            <div id="rokdobaCard" class="card teal z-depth-3">
+                <div class="card-content white-text center">
+                    <span id="rokdobaGateTitle" class="card-title center" >Laxmi. Ghat: <i class="material-icons"></i></span>
+                    <h1 id="countLaxmi" class="card-title center" style="font-size:30px">Loading</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col s2 m3">
+            <div id="rokdobaCard" class="card teal z-depth-3">
+                <div class="card-content white-text center">
+                    <span id="rokdobaGateTitle" class="card-title center">Ravivar Karanja: <i class="material-icons"></i></span>
+                    <h1 id="countGharpure" class="card-title center" style="font-size:30px">Loading</h1>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <div class="row">
+        <!--<div id="map" class="col s12 m6"></div>-->
+        <div id="plot">
+    <a href="https://plot.ly/~NilayKulkarni/770/" target="_blank" title="Deepotsav 2015" style="display: block; text-align: center;"><img src="https://plot.ly/~NilayKulkarni/770.png" alt="Deepotsav 2015" style="max-width: 100%;width: 600px;"  width="600" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+    <script data-plotly="NilayKulkarni:770"  src="https://plot.ly/embed.js" async></script>
+</div>                                                                                             
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/dynamodbpull.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+
+    <footer class="page-footer teal">
+    </footer>
+
+
+    <!--  Scripts-->
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrtfOkVRk9XCeU78C0YcGF2TS69MXLrhI&amp;callback=initMap">
+    </script>
+    <style type="text/css">
+    </style>
+
+
+</body>
+</html>
