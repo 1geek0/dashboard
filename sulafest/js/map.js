@@ -23,12 +23,12 @@ var gate10Stamp = "";
 function initMap() {
 	//Main Map
 	var map = new google.maps.Map(document.getElementById('map'), {
-		center: {lat: 19.994999, lng: 73.708065},
-		zoom: 20,
+		center: {lat: 20.0068729, lng: 73.68849999999998},
+		zoom: 16,
 		'mapTypeId': google.maps.MapTypeId.ROADMAP
 	});
 	//Rokdoba
-	var rokdobaLatLong = {lat:19.994999, lng:73.708065};
+	var rokdobaLatLong = {lat: 20.0068729, lng: 73.68849999999998};
 	var rokdobaTitle = "Gate 1";
 	
 	var rokdobaMarker = new google.maps.Marker({
