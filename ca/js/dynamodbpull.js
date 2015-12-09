@@ -222,14 +222,15 @@ function updateMegaCount(){
             zeroes+=1
         }
     }
-    if(zeroes==gates.length){
+    gateViews[0].innerHTML = gate1; 
+    /*if(zeroes==gates.length){
         for(var i=0;i<gateViews.length+1;i++){
             console.log(gateViews[i]);
             gateViews[i].innerHTML = "Looks like we're not live yet!";
         }
         megaCountTextView.innerHTML = "No Data";
         busiestCountTextView.innerHTML = "No Data";
-    }
+    }*/
     sortByCount.sort(function(a,b){
         return a.count - b.count;
     }).reverse();
