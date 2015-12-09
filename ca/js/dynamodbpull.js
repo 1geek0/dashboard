@@ -99,10 +99,10 @@ function getLast(){
 				N: position.toString()
 			},
                 ":time1":{
-                    N: "1449429161"
+                    N: "1452310142"
                 },
                 ":time2":{
-                    N: "1449774761"
+                    N: "1452536932"
                 },
 			},
             ScanIndexForward : false,
