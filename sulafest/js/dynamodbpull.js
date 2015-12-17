@@ -1,6 +1,3 @@
-$(document).ready(function(){
-      $('.parallax').parallax();
-    });
 //Gate Counts
 var gate1 = 0;
 var gate2 = 0;
